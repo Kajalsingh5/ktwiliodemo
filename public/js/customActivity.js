@@ -94,13 +94,14 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
+        var phonenumber = $('#phonenumber').val();
 
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "918975673945"
+            "to": phonenumber
            // "to": "{{Contact.Attribute.JourneyEntrySource.PhoneNumber}}" //<----This should map to your data extension name and phone number column
         }];
 
