@@ -20,6 +20,7 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
+    connection.on('clickedNext', publish);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
 
@@ -111,6 +112,31 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }                    
+    }  
+    
+    function publish() {
+
+        var accountSid = $('#accountSID').val();
+        var authToken = $('#authToken').val();
+        var messagingService = $('#messagingService').val();
+        var body = $('#messageBody').val();
+        //var phonenumber = $('#phonenumber').val();
+        var phonenumber = '918975673945';
+
+        payload['arguments'].execute.inArguments = [{
+            "accountSid": accountSid,
+            "authToken": authToken,
+            "messagingService": messagingService,
+            "body": body,
+            "to": phonenumber
+           // "to": "{{Contact.Attribute.JourneyEntrySource.PhoneNumber}}" //<----This should map to your data extension name and phone number column
+        }];
+
+        payload['metaData'].isConfigured = true;
+
+        console.log("Payload on SAVE function: "+JSON.stringify(payload));
+        connection.trigger('updateActivity', payload);
+
+    }  
 
 });
