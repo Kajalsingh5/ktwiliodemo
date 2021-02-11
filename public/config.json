@@ -17,7 +17,8 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.JourneyEntrySource.PhoneNumber}}" 
+                  "to": "{{Contact.Attribute.JourneyEntrySource.PhoneNumber}}",
+                  "from": "+918975673945" 
                 }               
             ],
             "outArguments": [],
