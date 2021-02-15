@@ -17,7 +17,7 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.JourneyEntrySource.PhoneNumber}}",
+                  "to": "{{Contact.Attribute.SMSCustomActivity.Phone}}",
                   "from": "+918975673945" 
                 }               
             ],
